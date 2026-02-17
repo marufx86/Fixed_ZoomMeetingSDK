@@ -7,9 +7,30 @@
 - **Platform**: Windows (64-bit)
 - **Issue Date**: January 2026
 
+## Before opening the project
+
+Open `Plugins/ZoomMeetingSDK/Source/ZoomMeetingSDK/ZoomMeetingSDK.Build.cs` and add:
+
+```csharp
+bEnableExceptions = true;
+```
+
+Place it inside the constructor, for example:
+
+```csharp
+public ZoomMeetingSDK(ReadOnlyTargetRules Target) : base(Target)
+{
+    PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+    bEnableExceptions = true;  // Add this line
+    
+    // ... rest of your existing code
+}
+```
+This small fix will work with this repository.
+
 ---
 
-## Problem Summary
+## Whole zoomMeetingSDK plugin Problem Summary
 
 ### The Error
 When attempting to package the Unreal Engine project, the build failed with the following compilation error:
@@ -260,13 +281,6 @@ public ZoomMeetingSDK(ReadOnlyTargetRules Target) : base(Target)
 - **Discord**: x_86or
 
 
----
-
-## Version History
-
-| Date | Version | Change |
-|------|---------|--------|
-| January 2026 | 1.0 | Initial fix applied and documented |
 
 ---
 
