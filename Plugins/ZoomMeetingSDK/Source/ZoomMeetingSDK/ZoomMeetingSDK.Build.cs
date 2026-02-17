@@ -9,6 +9,7 @@ public class ZoomMeetingSDK : ModuleRules
 	public ZoomMeetingSDK(ReadOnlyTargetRules Target) : base(Target)
 	{
 		PCHUsage = ModuleRules.PCHUsageMode.UseExplicitOrSharedPCHs;
+		bEnableExceptions = true;
 		// Path to the zoomLibPath.
 		// Update this to the path where Zoom SDK is.
 		// Note: UE only supports x64.
