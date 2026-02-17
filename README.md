@@ -229,6 +229,29 @@ If you update the ZoomMeetingSDK plugin in the future:
 - **Solution**: These should be warnings only; check your project's warning-as-error settings
 - **Solution**: If necessary, add `bEnableUndefinedIdentifierWarnings = false;` to suppress
 
+**Issue**: If you see still the plugin is failing 
+
+
+Open `Plugins/ZoomMeetingSDK/Source/ZoomMeetingSDK/ZoomMeetingSDK.Build.cs` and add:
+
+```csharp
+bEnableExceptions = true;
+```
+
+Place it inside the constructor, for example:
+
+```csharp
+public ZoomMeetingSDK(ReadOnlyTargetRules Target) : base(Target)
+{
+    PCHUsage = PCHUsageMode.UseExplicitOrSharedPCHs;
+    bEnableExceptions = true;  // Add this line
+    
+    // ... rest of your existing code
+}
+```
+
+
+
 ---
 
 ## Contact 
