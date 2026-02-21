@@ -7,7 +7,8 @@
 - **Platform**: Windows (64-bit)
 - **Issue Date**: January 2026
 
-## Before opening the project
+## IMPORTANT
+Open the .uproject as it is, then close and
 
 Open `Plugins/ZoomMeetingSDK/Source/ZoomMeetingSDK/ZoomMeetingSDK.Build.cs` and add:
 
