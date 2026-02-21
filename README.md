@@ -14,7 +14,6 @@ Open `Plugins/ZoomMeetingSDK/Source/ZoomMeetingSDK/ZoomMeetingSDK.Build.cs` and 
 ```csharp
 bEnableExceptions = true;
 ```
-
 Place it inside the constructor, for example:
 
 ```csharp
@@ -27,6 +26,20 @@ public ZoomMeetingSDK(ReadOnlyTargetRules Target) : base(Target)
 }
 ```
 This small fix will work with this repository.
+
+In order to work the web browser inside packaged project you need following .dll files
+
+  -libssl-3-x64.dll
+
+  https://www.dll-files.com/libssl-3-x64.dll.html
+  
+  -libcrypto-3-x64.dll
+
+  https://www.dll-files.com/libcrypto-3-x64.dll.html
+  
+<img width="1919" height="1079" alt="image" src="https://github.com/user-attachments/assets/1566c1f9-f6a3-47d5-b983-83a2dbbcebb2" />
+
+
 
 ---
 
